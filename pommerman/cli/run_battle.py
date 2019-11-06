@@ -76,7 +76,7 @@ def run(args, num_times=1, seed=None):
             if do_sleep:
                 time.sleep(5)
             env.render(close=True)
-            
+
         if args.render is False and record_json_dir:
             env.save_json(record_json_dir)
             time.sleep(1.0 / env._render_fps)

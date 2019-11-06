@@ -139,7 +139,6 @@ def make_board(size, num_rigid=0, num_wood=0, num_agents=4):
         while num_wood > 0:
             num_wood = lay_wall(constants.Item.Wood.value, num_wood,
                                 coordinates, board)
-
         return board, agents
 
     assert (num_rigid % 2 == 0)
@@ -241,7 +240,7 @@ def position_is_flames(board, position):
 
 def position_is_bomb(bombs, position):
     """Check if a given position is a bomb.
-    
+
     We don't check the board because that is an unreliable source. An agent
     may be obscuring the bomb on the board.
     """

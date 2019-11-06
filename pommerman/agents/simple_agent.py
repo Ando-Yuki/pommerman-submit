@@ -38,7 +38,6 @@ class SimpleAgent(BaseAgent):
                     'blast_strength': int(bomb_map[(r, c)])
                 })
             return ret
-
         my_position = tuple(obs['position'])
         board = np.array(obs['board'])
         bombs = convert_bombs(np.array(obs['bomb_blast_strength']))
@@ -144,7 +143,7 @@ class SimpleAgent(BaseAgent):
                 prev[position] = None
                 item = constants.Item(board[position])
                 items[item].append(position)
-                
+
                 if position == my_position:
                     Q.put(position)
                     dist[position] = 0
@@ -173,7 +172,7 @@ class SimpleAgent(BaseAgent):
                         Q.put(new_position)
                     elif (val == dist[new_position] and random.random() < .5):
                         dist[new_position] = val
-                        prev[new_position] = position   
+                        prev[new_position] = position
 
 
         return items, dist, prev

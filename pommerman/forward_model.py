@@ -2,7 +2,7 @@
 from collections import defaultdict
 
 import numpy as np
-
+import action_prune
 from . import constants
 from . import characters
 from . import utility
@@ -94,7 +94,10 @@ class ForwardModel(object):
 
         Returns a list of actions.
         """
+        #ここにプルーンを書く##########################
 
+        #actions = action_prune.get_filtered_actions(obs)
+        ###########################################
         def act_ex_communication(agent):
             '''Handles agent's move without communication'''
             if agent.is_alive:
